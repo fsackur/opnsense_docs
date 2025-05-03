@@ -1,0 +1,5725 @@
+[
+    [
+        {
+            "actions": [
+                {
+                    "command": "api",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "logoff",
+                    "parameters": "$zoneid=0",
+                    "method": "GET"
+                },
+                {
+                    "command": "logon",
+                    "parameters": "$zoneid=0",
+                    "method": "POST"
+                },
+                {
+                    "command": "status",
+                    "parameters": "$zoneid=0",
+                    "method": "GET,POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "captiveportal",
+            "controller": "access",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "AccessController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "del_template",
+                    "parameters": "$uuid",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_template",
+                    "parameters": "$fileid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "save_template",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_templates",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Service",
+            "module": "captiveportal",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "connect",
+                    "parameters": "$zoneid=0",
+                    "method": "POST"
+                },
+                {
+                    "command": "disconnect",
+                    "parameters": "$zoneid=''",
+                    "method": "POST"
+                },
+                {
+                    "command": "list",
+                    "parameters": "$zoneid=0",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "zones",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "captiveportal",
+            "controller": "session",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SessionController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_zone",
+                    "parameters": "",
+                    "model_path": "zones.zone",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_zone",
+                    "parameters": "$uuid",
+                    "model_path": "zones.zone",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_zone",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_zones",
+                    "parameters": "",
+                    "model_path": "zones.zone",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_zone",
+                    "parameters": "$uuid",
+                    "model_path": "zones.zone",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_zone",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "zones.zone",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "captiveportal",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/CaptivePortal/CaptivePortal.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "drop_expired_vouchers",
+                    "parameters": "$provider,$group",
+                    "method": "POST"
+                },
+                {
+                    "command": "drop_voucher_group",
+                    "parameters": "$provider,$group",
+                    "method": "POST"
+                },
+                {
+                    "command": "expire_voucher",
+                    "parameters": "$provider",
+                    "method": "POST"
+                },
+                {
+                    "command": "generate_vouchers",
+                    "parameters": "$provider",
+                    "method": "POST"
+                },
+                {
+                    "command": "list_providers",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_voucher_groups",
+                    "parameters": "$provider",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_vouchers",
+                    "parameters": "$provider,$group",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "captiveportal",
+            "controller": "voucher",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "VoucherController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "backups",
+                    "parameters": "$host",
+                    "method": "GET"
+                },
+                {
+                    "command": "delete_backup",
+                    "parameters": "$backup",
+                    "method": "GET"
+                },
+                {
+                    "command": "diff",
+                    "parameters": "$host,$backup1,$backup2",
+                    "method": "GET"
+                },
+                {
+                    "command": "download",
+                    "parameters": "$host,$backup=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "providers",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "revert_backup",
+                    "parameters": "$backup",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "backup",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "BackupController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "get_dashboard",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "picture",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "product_info_feed",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "restore_defaults",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "save_widgets",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "dashboard",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "DashboardController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "hasync",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "HasyncController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Core/Hasync.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "remote_service",
+                    "parameters": "$action,$service,$service_id",
+                    "method": "GET"
+                },
+                {
+                    "command": "restart",
+                    "parameters": "$service=null,$service_id=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "restart_all",
+                    "parameters": "$service=null,$service_id=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "services",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "start",
+                    "parameters": "$service=null,$service_id=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "stop",
+                    "parameters": "$service=null,$service_id=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "version",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "hasync_status",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "HasyncStatusController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "configure",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "initial_setup",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "InitialSetupController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Core/InitialSetup.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "tree",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "menu",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "MenuController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "restart",
+                    "parameters": "$name,$id=''",
+                    "method": "POST"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "start",
+                    "parameters": "$name,$id=''",
+                    "method": "POST"
+                },
+                {
+                    "command": "stop",
+                    "parameters": "$name,$id=''",
+                    "method": "POST"
+                }
+            ],
+            "type": "Service",
+            "module": "core",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "activate",
+                    "parameters": "$uuid",
+                    "method": "POST"
+                },
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "is_supported",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "snapshots",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SnapshotsController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "dismiss_status",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "halt",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reboot",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "status",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "system",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SystemController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "item",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "item",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reset",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "item",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "item",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "core",
+            "controller": "tunables",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "TunablesController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Core/Tunables.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Service",
+            "module": "cron",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_job",
+                    "parameters": "",
+                    "model_path": "jobs.job",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_job",
+                    "parameters": "$uuid",
+                    "model_path": "jobs.job",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_job",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_jobs",
+                    "parameters": "",
+                    "model_path": "jobs.job",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_job",
+                    "parameters": "$uuid",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_job",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "jobs.job",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "cron",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Cron/Cron.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "del_lease",
+                    "parameters": "$ip",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_lease",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "dhcpv4",
+            "controller": "leases",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "LeasesController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "dhcpv4",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "del_lease",
+                    "parameters": "$ip",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_lease",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_prefix",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "dhcpv6",
+            "controller": "leases",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "LeasesController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "dhcpv6",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Service",
+            "module": "dhcrelay",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_dest",
+                    "parameters": "",
+                    "model_path": "destinations",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_relay",
+                    "parameters": "",
+                    "model_path": "relays",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_dest",
+                    "parameters": "$uuid",
+                    "model_path": "destinations",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_relay",
+                    "parameters": "$uuid",
+                    "model_path": "relays",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_dest",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_relay",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_dest",
+                    "parameters": "",
+                    "model_path": "destinations",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_relay",
+                    "parameters": "",
+                    "model_path": "relays",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_dest",
+                    "parameters": "$uuid",
+                    "model_path": "destinations",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_relay",
+                    "parameters": "$uuid",
+                    "model_path": "relays",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_relay",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "relays",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "dhcrelay",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/DHCRelay/DHCRelay.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "get_activity",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "activity",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ActivityController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "get_c_p_u_type",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "stream",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "cpu_usage",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "CpuUsageController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "reverse_lookup",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "dns",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "DnsController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "set",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "dns_diagnostics",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "DnsDiagnosticsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Diagnostics/DnsDiagnostics.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "del_state",
+                    "parameters": "$stateid,$creatorid",
+                    "method": "POST"
+                },
+                {
+                    "command": "flush_sources",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "flush_states",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "kill_states",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "list_rule_ids",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "log",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "log_filters",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "pf_states",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "pf_statistics",
+                    "parameters": "$section=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "query_pf_top",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "query_states",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "stats",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "stream_log",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "firewall",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "FirewallController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "_carp_status",
+                    "parameters": "$status",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_route",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "flush_arp",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_arp",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_bpf_statistics",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_interface_config",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_interface_names",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_interface_statistics",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_memory_statistics",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_ndp",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_netisr_statistics",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_pfsync_nodes",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_protocol_statistics",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_routes",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_socket_statistics",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_vip_status",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_arp",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_ndp",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "interface",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "InterfaceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "log",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "LogController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "templates.template",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "templates.template",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "templates.template",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "templates.template",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "lvtemplate",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "LvtemplateController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Diagnostics/Lvtemplate.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "cache_stats",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "getconfig",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "is_enabled",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "setconfig",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "status",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "netflow",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "NetflowController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "export",
+                    "parameters": "$provider=null,$from_date=null,$to_date=null,$resolution=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_interfaces",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_metadata",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_protocols",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_services",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "timeserie",
+                    "parameters": "$provider=null,$measure=null,$from_date=null,$to_date=null,$resolution=null,$field=null,$emulation=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "top",
+                    "parameters": "$provider=null,$from_date=null,$to_date=null,$field=null,$measure=null,$max_hits=null",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "networkinsight",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "NetworkinsightController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "download",
+                    "parameters": "$jobid",
+                    "method": "GET"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "mac_info",
+                    "parameters": "$macaddr",
+                    "method": "GET"
+                },
+                {
+                    "command": "remove",
+                    "parameters": "$jobid",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_jobs",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "set",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "start",
+                    "parameters": "$jobid",
+                    "method": "POST"
+                },
+                {
+                    "command": "stop",
+                    "parameters": "$jobid",
+                    "method": "POST"
+                },
+                {
+                    "command": "view",
+                    "parameters": "$jobid,$detail=normal",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "packet_capture",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "PacketCaptureController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Diagnostics/PacketCapture.xml"
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "remove",
+                    "parameters": "$jobid",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_jobs",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "set",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "start",
+                    "parameters": "$jobid",
+                    "method": "POST"
+                },
+                {
+                    "command": "stop",
+                    "parameters": "$jobid",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "ping",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "PingController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Diagnostics/Ping.xml"
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "set",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "portprobe",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "PortprobeController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Diagnostics/Portprobe.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "memory",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_disk",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_information",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_mbuf",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_resources",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_swap",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_temperature",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "system_time",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "system",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SystemController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "export_as_c_s_v",
+                    "parameters": "$rrd='',$detail=-1",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_interfaces",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_r_r_dlist",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_system_health",
+                    "parameters": "$rrd='',$detail=-1",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "systemhealth",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SystemhealthController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "set",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "traceroute",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "TracerouteController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Diagnostics/Traceroute.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "_interface",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "_top",
+                    "parameters": "$interfaces",
+                    "method": "GET"
+                },
+                {
+                    "command": "stream",
+                    "parameters": "$poll_interval=1",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "diagnostics",
+            "controller": "traffic",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "TrafficController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "export",
+                    "parameters": "",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_alias_u_u_i_d",
+                    "parameters": "$name",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_geo_i_p",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_table_size",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "import",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "list_categories",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_countries",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_network_aliases",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_user_groups",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "aliases.alias",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_item",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "alias",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "AliasController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Firewall/Alias.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "$alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "aliases",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "delete",
+                    "parameters": "$alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "find_references",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "flush",
+                    "parameters": "$alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "list",
+                    "parameters": "$alias",
+                    "method": "GET"
+                },
+                {
+                    "command": "update_bogons",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "alias_util",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "AliasUtilController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "categories.category",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "categories.category",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "$add_empty=0",
+                    "model_path": "categories.category",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "categories.category",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "category",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "CategoryController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Firewall/Category.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "apply",
+                    "parameters": "$rollback_revision=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "cancel_rollback",
+                    "parameters": "$rollback_revision",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "list_categories",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_network_select_options",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "revert",
+                    "parameters": "$revision",
+                    "method": "POST"
+                },
+                {
+                    "command": "savepoint",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Abstract [non-callable]",
+            "module": "firewall",
+            "controller": "filter_base",
+            "is_abstract": true,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "FilterBaseController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Firewall/Filter.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_rule",
+                    "parameters": "",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_rule",
+                    "parameters": "$uuid",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_interface_list",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "move_rule_before",
+                    "parameters": "$selected_uuid,$target_uuid",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_rule",
+                    "parameters": "",
+                    "model_path": "rules.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set_rule",
+                    "parameters": "$uuid",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "filter",
+            "is_abstract": false,
+            "base_class": "FilterBaseController",
+            "filename": "FilterController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "rule_stats",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "filter_util",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "FilterUtilController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "ifgroupentry",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "ifgroupentry",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "ifgroupentry",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "ifgroupentry",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "group",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "GroupController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Firewall/Group.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_rule",
+                    "parameters": "",
+                    "model_path": "npt.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_rule",
+                    "parameters": "$uuid",
+                    "model_path": "npt.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_rule",
+                    "parameters": "",
+                    "model_path": "npt.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set_rule",
+                    "parameters": "$uuid",
+                    "model_path": "npt.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "npt.rule",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "npt",
+            "is_abstract": false,
+            "base_class": "FilterBaseController",
+            "filename": "NptController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_rule",
+                    "parameters": "",
+                    "model_path": "onetoone.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_rule",
+                    "parameters": "$uuid",
+                    "model_path": "onetoone.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_rule",
+                    "parameters": "",
+                    "model_path": "onetoone.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set_rule",
+                    "parameters": "$uuid",
+                    "model_path": "onetoone.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "onetoone.rule",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "one_to_one",
+            "is_abstract": false,
+            "base_class": "FilterBaseController",
+            "filename": "OneToOneController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_rule",
+                    "parameters": "",
+                    "model_path": "snatrules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_rule",
+                    "parameters": "$uuid",
+                    "model_path": "snatrules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_rule",
+                    "parameters": "",
+                    "model_path": "snatrules.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set_rule",
+                    "parameters": "$uuid",
+                    "model_path": "snatrules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "snatrules.rule",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "firewall",
+            "controller": "source_nat",
+            "is_abstract": false,
+            "base_class": "FilterBaseController",
+            "filename": "SourceNatController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "drop_alert_log",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "get_alert_info",
+                    "parameters": "$alertId,$fileid=''",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_alert_logs",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "query_alerts",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reload_rules",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                },
+                {
+                    "command": "update_rules",
+                    "parameters": "$wait=null",
+                    "method": "POST"
+                }
+            ],
+            "type": "Service",
+            "module": "ids",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_policy",
+                    "parameters": "",
+                    "model_path": "policies.policy",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_policy_rule",
+                    "parameters": "",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_user_rule",
+                    "parameters": "",
+                    "model_path": "userDefinedRules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "check_policy_rule",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "del_policy",
+                    "parameters": "$uuid",
+                    "model_path": "policies.policy",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_policy_rule",
+                    "parameters": "$uuid",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_user_rule",
+                    "parameters": "$uuid",
+                    "model_path": "userDefinedRules.rule",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_policy",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_policy_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_rule_info",
+                    "parameters": "$sid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_ruleset",
+                    "parameters": "$id",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_rulesetproperties",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_user_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_rule_metadata",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_rulesets",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_installed_rules",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_policy",
+                    "parameters": "",
+                    "model_path": "policies.policy",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_policy_rule",
+                    "parameters": "",
+                    "model_path": "rules.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_user_rule",
+                    "parameters": "",
+                    "model_path": "userDefinedRules.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_policy",
+                    "parameters": "$uuid",
+                    "model_path": "policies.policy",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_policy_rule",
+                    "parameters": "$uuid",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_rule",
+                    "parameters": "$sid",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_ruleset",
+                    "parameters": "$filename",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_rulesetproperties",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_user_rule",
+                    "parameters": "$uuid",
+                    "model_path": "userDefinedRules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_policy",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "policies.policy",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_policy_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_rule",
+                    "parameters": "$sids,$enabled=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_ruleset",
+                    "parameters": "$filenames,$enabled=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_user_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "userDefinedRules.rule",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ids",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IDS/IDS.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add_child",
+                    "parameters": "",
+                    "model_path": "children.child",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_connection",
+                    "parameters": "",
+                    "model_path": "Connections.Connection",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_local",
+                    "parameters": "",
+                    "model_path": "locals.local",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_remote",
+                    "parameters": "",
+                    "model_path": "remotes.remote",
+                    "method": "POST"
+                },
+                {
+                    "command": "connection_exists",
+                    "parameters": "$uuid",
+                    "method": "GET"
+                },
+                {
+                    "command": "del_child",
+                    "parameters": "$uuid",
+                    "model_path": "children.child",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_connection",
+                    "parameters": "$uuid",
+                    "model_path": "Connections.Connection",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_local",
+                    "parameters": "$uuid",
+                    "model_path": "locals.local",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_remote",
+                    "parameters": "$uuid",
+                    "model_path": "remotes.remote",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_child",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_connection",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_local",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_remote",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "is_enabled",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_child",
+                    "parameters": "",
+                    "model_path": "children.child",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_connection",
+                    "parameters": "",
+                    "model_path": "Connections.Connection",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_local",
+                    "parameters": "",
+                    "model_path": "locals.local",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_remote",
+                    "parameters": "",
+                    "model_path": "remotes.remote",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_child",
+                    "parameters": "$uuid=null",
+                    "model_path": "children.child",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_connection",
+                    "parameters": "$uuid=null",
+                    "model_path": "Connections.Connection",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_local",
+                    "parameters": "$uuid=null",
+                    "model_path": "locals.local",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_remote",
+                    "parameters": "$uuid=null",
+                    "model_path": "remotes.remote",
+                    "method": "POST"
+                },
+                {
+                    "command": "swanctl",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$enabled=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_child",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "children.child",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_connection",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "Connections.Connection",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_local",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "locals.local",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_remote",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "remotes.remote",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "connections",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "ConnectionsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/Swanctl.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "keyPairs.keyPair",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "keyPairs.keyPair",
+                    "method": "POST"
+                },
+                {
+                    "command": "gen_key_pair",
+                    "parameters": "$type,$size=null",
+                    "method": "GET"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "keyPairs.keyPair",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid=null",
+                    "model_path": "keyPairs.keyPair",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "key_pairs",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "KeyPairsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/IPsec.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "pools",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "leases",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "LeasesController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "apply_config",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "status",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "legacy_subsystem",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "LegacySubsystemController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "SPDs.SPD",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "SPDs.SPD",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "SPDs.SPD",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "SPDs.SPD",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "SPDs.SPD",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "manual_spd",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "ManualSpdController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/Swanctl.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "Pools.Pool",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "Pools.Pool",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "Pools.Pool",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "Pools.Pool",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "Pools.Pool",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "pools",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "PoolsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/Swanctl.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "preSharedKeys.preSharedKey",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "preSharedKeys.preSharedKey",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "preSharedKeys.preSharedKey",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid=null",
+                    "model_path": "preSharedKeys.preSharedKey",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "pre_shared_keys",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "PreSharedKeysController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/IPsec.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "delete",
+                    "parameters": "$id",
+                    "method": "POST"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "sad",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SadController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "ipsec",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "connect",
+                    "parameters": "$id",
+                    "method": "POST"
+                },
+                {
+                    "command": "disconnect",
+                    "parameters": "$id",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_phase1",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_phase2",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "sessions",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SessionsController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "get",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/IPsec.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "delete",
+                    "parameters": "$id",
+                    "method": "POST"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "spd",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "SpdController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "del_phase1",
+                    "parameters": "$ikeid",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_phase2",
+                    "parameters": "$seqid",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_phase1",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_phase2",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$enabled=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_phase1",
+                    "parameters": "$ikeid,$enabled=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_phase2",
+                    "parameters": "$seqid,$enabled=null",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "tunnel",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "TunnelController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "VTIs.VTI",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "VTIs.VTI",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "VTIs.VTI",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "VTIs.VTI",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "VTIs.VTI",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "ipsec",
+            "controller": "vti",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "VtiController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/IPsec/Swanctl.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "bridged",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "bridged",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "bridged",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "bridged",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "bridge_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "BridgeSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Bridge.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "gif",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "gif",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_if_options",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "gif",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "gif",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "gif_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "GifSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Gif.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "gre",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "gre",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_if_options",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "gre",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "gre",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "gre_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "GreSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Gre.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "lagg",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "lagg",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "lagg",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "lagg",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "lagg_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "LaggSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Lagg.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "loopback",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "loopback",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "loopback",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "loopback",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "loopback_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "LoopbackSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Loopback.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "neighbor",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "neighbor",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "neighbor",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "neighbor",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "neighbor_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "NeighborSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Neighbor.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "export",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_interface",
+                    "parameters": "$if=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "interfaces_info",
+                    "parameters": "$details=false",
+                    "method": "GET"
+                },
+                {
+                    "command": "reload_interface",
+                    "parameters": "$identifier=null",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "overview",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "OverviewController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "vip",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "vip",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_unused_vhid",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "vip",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "vip",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "vip_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "VipSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Vip.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "vlan",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "vlan",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "vlan",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "vlan",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "vlan_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "VlanSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/Vlan.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_item",
+                    "parameters": "",
+                    "model_path": "vxlan",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_item",
+                    "parameters": "$uuid",
+                    "model_path": "vxlan",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_item",
+                    "parameters": "",
+                    "model_path": "vxlan",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$uuid",
+                    "model_path": "vxlan",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "interfaces",
+            "controller": "vxlan_settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "VxlanSettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Interfaces/VxLan.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "get",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Resources",
+            "module": "kea",
+            "controller": "ctrl_agent",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "CtrlAgentController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Kea/KeaCtrlAgent.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_peer",
+                    "parameters": "",
+                    "model_path": "ha_peers.peer",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_reservation",
+                    "parameters": "",
+                    "model_path": "reservations.reservation",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_subnet",
+                    "parameters": "",
+                    "model_path": "subnets.subnet4",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_peer",
+                    "parameters": "$uuid",
+                    "model_path": "ha_peers.peer",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_reservation",
+                    "parameters": "$uuid",
+                    "model_path": "reservations.reservation",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_subnet",
+                    "parameters": "$uuid",
+                    "model_path": "subnets.subnet4",
+                    "method": "POST"
+                },
+                {
+                    "command": "download_reservations",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_peer",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_reservation",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_subnet",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_peer",
+                    "parameters": "",
+                    "model_path": "ha_peers.peer",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_reservation",
+                    "parameters": "",
+                    "model_path": "reservations.reservation",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_subnet",
+                    "parameters": "",
+                    "model_path": "subnets.subnet4",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_peer",
+                    "parameters": "$uuid",
+                    "model_path": "ha_peers.peer",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_reservation",
+                    "parameters": "$uuid",
+                    "model_path": "reservations.reservation",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_subnet",
+                    "parameters": "$uuid",
+                    "model_path": "subnets.subnet4",
+                    "method": "POST"
+                },
+                {
+                    "command": "upload_reservations",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "kea",
+            "controller": "dhcpv4",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "Dhcpv4Controller.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Kea/KeaDhcpv4.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_pd_pool",
+                    "parameters": "",
+                    "model_path": "pd_pools.pd_pool",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_peer",
+                    "parameters": "",
+                    "model_path": "ha_peers.peer",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_reservation",
+                    "parameters": "",
+                    "model_path": "reservations.reservation",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_subnet",
+                    "parameters": "",
+                    "model_path": "subnets.subnet6",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_pd_pool",
+                    "parameters": "$uuid",
+                    "model_path": "pd_pools.pd_pool",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_peer",
+                    "parameters": "$uuid",
+                    "model_path": "ha_peers.peer",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_reservation",
+                    "parameters": "$uuid",
+                    "model_path": "reservations.reservation",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_subnet",
+                    "parameters": "$uuid",
+                    "model_path": "subnets.subnet6",
+                    "method": "POST"
+                },
+                {
+                    "command": "download_reservations",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_pd_pool",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_peer",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_reservation",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_subnet",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_pd_pool",
+                    "parameters": "",
+                    "model_path": "pd_pools.pd_pool",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_peer",
+                    "parameters": "",
+                    "model_path": "ha_peers.peer",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_reservation",
+                    "parameters": "",
+                    "model_path": "reservations.reservation",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_subnet",
+                    "parameters": "",
+                    "model_path": "subnets.subnet6",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_pd_pool",
+                    "parameters": "$uuid",
+                    "model_path": "pd_pools.pd_pool",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_peer",
+                    "parameters": "$uuid",
+                    "model_path": "ha_peers.peer",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_reservation",
+                    "parameters": "$uuid",
+                    "model_path": "reservations.reservation",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_subnet",
+                    "parameters": "$uuid",
+                    "model_path": "subnets.subnet6",
+                    "method": "POST"
+                },
+                {
+                    "command": "upload_reservations",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "kea",
+            "controller": "dhcpv6",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "Dhcpv6Controller.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Kea/KeaDhcpv6.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "kea",
+            "controller": "leases4",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "Leases4Controller.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "kea",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "check",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "monit",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_alert",
+                    "parameters": "",
+                    "model_path": "alert",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_service",
+                    "parameters": "",
+                    "model_path": "service",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_test",
+                    "parameters": "",
+                    "model_path": "test",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_alert",
+                    "parameters": "$uuid",
+                    "model_path": "alert",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_service",
+                    "parameters": "$uuid",
+                    "model_path": "service",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_test",
+                    "parameters": "$uuid",
+                    "model_path": "test",
+                    "method": "POST"
+                },
+                {
+                    "command": "dirty",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_alert",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_general",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_service",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_test",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_alert",
+                    "parameters": "",
+                    "model_path": "alert",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_service",
+                    "parameters": "",
+                    "model_path": "service",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_test",
+                    "parameters": "",
+                    "model_path": "test",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_alert",
+                    "parameters": "$uuid",
+                    "model_path": "alert",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_service",
+                    "parameters": "$uuid",
+                    "model_path": "service",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_test",
+                    "parameters": "$uuid",
+                    "model_path": "test",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_alert",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "alert",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_service",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "service",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "monit",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Monit/Monit.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "get",
+                    "parameters": "$format=xml",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "monit",
+            "controller": "status",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "StatusController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "Overwrites.Overwrite",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "Overwrites.Overwrite",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "Overwrites.Overwrite",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "Overwrites.Overwrite",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "Overwrites.Overwrite",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "openvpn",
+            "controller": "client_overwrites",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "ClientOverwritesController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/OpenVPN/OpenVPN.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "accounts",
+                    "parameters": "$vpnid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "download",
+                    "parameters": "$vpnid,$certref=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "providers",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "store_presets",
+                    "parameters": "$vpnid",
+                    "method": "POST"
+                },
+                {
+                    "command": "templates",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "validate_presets",
+                    "parameters": "$vpnid",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "openvpn",
+            "controller": "export",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ExportController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "Instances.Instance",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_static_key",
+                    "parameters": "",
+                    "model_path": "StaticKeys.StaticKey",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "Instances.Instance",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_static_key",
+                    "parameters": "$uuid",
+                    "model_path": "StaticKeys.StaticKey",
+                    "method": "POST"
+                },
+                {
+                    "command": "gen_key",
+                    "parameters": "$type=secret",
+                    "method": "GET"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_static_key",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "Instances.Instance",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_static_key",
+                    "parameters": "",
+                    "model_path": "StaticKeys.StaticKey",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "Instances.Instance",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_static_key",
+                    "parameters": "$uuid=null",
+                    "model_path": "StaticKeys.StaticKey",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "Instances.Instance",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "openvpn",
+            "controller": "instances",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "InstancesController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/OpenVPN/OpenVPN.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "kill_session",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "restart_service",
+                    "parameters": "$id=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_routes",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_sessions",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "start_service",
+                    "parameters": "$id=null",
+                    "method": "POST"
+                },
+                {
+                    "command": "stop_service",
+                    "parameters": "$id=null",
+                    "method": "POST"
+                }
+            ],
+            "type": "Service",
+            "module": "openvpn",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "status",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "routes",
+            "controller": "gateway",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "GatewayController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "addroute",
+                    "parameters": "",
+                    "model_path": "route",
+                    "method": "POST"
+                },
+                {
+                    "command": "delroute",
+                    "parameters": "$uuid",
+                    "model_path": "route",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "getroute",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "searchroute",
+                    "parameters": "",
+                    "model_path": "route",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "setroute",
+                    "parameters": "$uuid",
+                    "model_path": "route",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggleroute",
+                    "parameters": "$uuid,$disabled=null",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "routes",
+            "controller": "routes",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "RoutesController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Routes/Route.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add_gateway",
+                    "parameters": "",
+                    "model_path": "gateway_item",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_gateway",
+                    "parameters": "$uuid",
+                    "model_path": "gateway_item",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_gateway",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "search_gateway",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_gateway",
+                    "parameters": "$uuid",
+                    "model_path": "gateway_item",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_gateway",
+                    "parameters": "$uuid,$enabled=null",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "routing",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Routing/Gateways.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "command": "reset",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "command": "stats",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "syslog",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_destination",
+                    "parameters": "",
+                    "model_path": "destinations.destination",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_destination",
+                    "parameters": "$uuid",
+                    "model_path": "destinations.destination",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_destination",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_destinations",
+                    "parameters": "",
+                    "model_path": "destinations.destination",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_destination",
+                    "parameters": "$uuid",
+                    "model_path": "destinations.destination",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_destination",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "destinations.destination",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "syslog",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Syslog/Syslog.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "flushreload",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "command": "statistics",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Service",
+            "module": "trafficshaper",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_pipe",
+                    "parameters": "",
+                    "model_path": "pipes.pipe",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_queue",
+                    "parameters": "",
+                    "model_path": "queues.queue",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_rule",
+                    "parameters": "",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_pipe",
+                    "parameters": "$uuid",
+                    "model_path": "pipes.pipe",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_queue",
+                    "parameters": "$uuid",
+                    "model_path": "queues.queue",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_rule",
+                    "parameters": "$uuid",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_pipe",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_queue",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_rule",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_pipes",
+                    "parameters": "",
+                    "model_path": "pipes.pipe",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_queues",
+                    "parameters": "",
+                    "model_path": "queues.queue",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_rules",
+                    "parameters": "",
+                    "model_path": "rules.rule",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_pipe",
+                    "parameters": "$uuid",
+                    "model_path": "pipes.pipe",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_queue",
+                    "parameters": "$uuid",
+                    "model_path": "queues.queue",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_rule",
+                    "parameters": "$uuid",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_pipe",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "pipes.pipe",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_queue",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "queues.queue",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_rule",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "rules.rule",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "trafficshaper",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/TrafficShaper/TrafficShaper.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "ca_info",
+                    "parameters": "$caref",
+                    "method": "GET"
+                },
+                {
+                    "command": "ca_list",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "ca",
+                    "method": "POST"
+                },
+                {
+                    "command": "generate_file",
+                    "parameters": "$uuid=null,$type=crt",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "raw_dump",
+                    "parameters": "$uuid",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "ca",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "ca",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "trust",
+            "controller": "ca",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "CaController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Trust/Ca.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "cert",
+                    "method": "POST"
+                },
+                {
+                    "command": "ca_info",
+                    "parameters": "$caref=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "ca_list",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "cert",
+                    "method": "POST"
+                },
+                {
+                    "command": "generate_file",
+                    "parameters": "$uuid=null,$type=crt",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "raw_dump",
+                    "parameters": "$uuid",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "cert",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "cert",
+                    "method": "POST"
+                },
+                {
+                    "command": "user_list",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "trust",
+            "controller": "cert",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "CertController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Trust/Cert.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "del",
+                    "parameters": "$caref",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$caref",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_ocsp_info_data",
+                    "parameters": "$caref",
+                    "method": "GET"
+                },
+                {
+                    "command": "raw_dump",
+                    "parameters": "$caref",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$caref",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "trust",
+            "controller": "crl",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "CrlController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Resources",
+            "module": "trust",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Trust/General.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "dumpcache",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "dumpinfra",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "listinsecure",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "listlocaldata",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "listlocalzones",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "stats",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "unbound",
+            "controller": "diagnostics",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "DiagnosticsController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "_rolling",
+                    "parameters": "$timeperiod,$clients=0",
+                    "method": "GET"
+                },
+                {
+                    "command": "is_block_list_enabled",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "is_enabled",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_queries",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "totals",
+                    "parameters": "$maximum",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "unbound",
+            "controller": "overview",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "OverviewController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "dnsbl",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "command": "reconfigure_general",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "unbound",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_acl",
+                    "parameters": "",
+                    "model_path": "acls.acl",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_forward",
+                    "parameters": "",
+                    "model_path": "dots.dot",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_host_alias",
+                    "parameters": "",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_host_override",
+                    "parameters": "",
+                    "model_path": "hosts.host",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_acl",
+                    "parameters": "$uuid",
+                    "model_path": "acls.acl",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_forward",
+                    "parameters": "$uuid",
+                    "model_path": "dots.dot",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_host_alias",
+                    "parameters": "$uuid",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_host_override",
+                    "parameters": "$uuid",
+                    "model_path": "hosts.host",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_acl",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_forward",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_host_alias",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_host_override",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_nameservers",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_acl",
+                    "parameters": "",
+                    "model_path": "acls.acl",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_forward",
+                    "parameters": "",
+                    "model_path": "dots.dot",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_host_alias",
+                    "parameters": "",
+                    "model_path": "aliases.alias",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_host_override",
+                    "parameters": "",
+                    "model_path": "hosts.host",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_acl",
+                    "parameters": "$uuid",
+                    "model_path": "acls.acl",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_forward",
+                    "parameters": "$uuid",
+                    "model_path": "dots.dot",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_host_alias",
+                    "parameters": "$uuid",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_host_override",
+                    "parameters": "$uuid",
+                    "model_path": "hosts.host",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_acl",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "acls.acl",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_forward",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "dots.dot",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_host_alias",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "aliases.alias",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_host_override",
+                    "parameters": "$uuid,$enabled=null",
+                    "model_path": "hosts.host",
+                    "method": "POST"
+                },
+                {
+                    "command": "update_blocklist",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "unbound",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Unbound/Unbound.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add_client",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "add_client_builder",
+                    "parameters": "",
+                    "model_path": "clients.client",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_client",
+                    "parameters": "$uuid",
+                    "model_path": "clients.client",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_client",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_client_builder",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_server_info",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "list_servers",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "psk",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_client",
+                    "parameters": "",
+                    "model_path": "clients.client",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_client",
+                    "parameters": "$uuid",
+                    "model_path": "clients.client",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_client",
+                    "parameters": "$uuid",
+                    "model_path": "clients.client",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "wireguard",
+            "controller": "client",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "ClientController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Wireguard/Client.xml"
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                }
+            ],
+            "type": "Resources",
+            "module": "wireguard",
+            "controller": "general",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "GeneralController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Wireguard/General.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_server",
+                    "parameters": "$uuid=null",
+                    "model_path": "servers.server",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_server",
+                    "parameters": "$uuid",
+                    "model_path": "servers.server",
+                    "method": "POST"
+                },
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_server",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "key_pair",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_server",
+                    "parameters": "",
+                    "model_path": "servers.server",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_server",
+                    "parameters": "$uuid=null",
+                    "model_path": "servers.server",
+                    "method": "POST"
+                },
+                {
+                    "command": "toggle_server",
+                    "parameters": "$uuid",
+                    "model_path": "servers.server",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "wireguard",
+            "controller": "server",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "ServerController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Wireguard/Server.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "reconfigure",
+                    "parameters": "",
+                    "method": "POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "command": "show",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "wireguard",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "group",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "group",
+                    "method": "POST"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "group",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "group",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "auth",
+            "controller": "group",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "GroupController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Auth/Group.xml"
+        },
+        {
+            "actions": [
+                {
+                    "method": "GET",
+                    "command": "get",
+                    "parameters": ""
+                },
+                {
+                    "command": "get_item",
+                    "parameters": "$id",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_item",
+                    "parameters": "$id",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "auth",
+            "controller": "priv",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "PrivController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Auth/Priv.xml"
+        },
+        {
+            "actions": [
+                {
+                    "command": "add",
+                    "parameters": "",
+                    "model_path": "user",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_api_key",
+                    "parameters": "$username",
+                    "method": "POST"
+                },
+                {
+                    "command": "del",
+                    "parameters": "$uuid",
+                    "model_path": "user",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_api_key",
+                    "parameters": "$id",
+                    "method": "POST"
+                },
+                {
+                    "command": "download",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "new_otp_seed",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "model_path": "user",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_api_key",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "set",
+                    "parameters": "$uuid=null",
+                    "model_path": "user",
+                    "method": "POST"
+                },
+                {
+                    "command": "upload",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "auth",
+            "controller": "user",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "UserController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Auth/User.xml"
+        }
+    ],
+    [
+        {
+            "actions": [
+                {
+                    "command": "search",
+                    "parameters": "",
+                    "method": "GET"
+                }
+            ],
+            "type": "Resources",
+            "module": "dnsmasq",
+            "controller": "leases",
+            "is_abstract": false,
+            "base_class": "ApiControllerBase",
+            "filename": "LeasesController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "method": "POST",
+                    "command": "reconfigure",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "restart",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "start",
+                    "parameters": ""
+                },
+                {
+                    "method": "GET",
+                    "command": "status",
+                    "parameters": ""
+                },
+                {
+                    "method": "POST",
+                    "command": "stop",
+                    "parameters": ""
+                }
+            ],
+            "type": "Service",
+            "module": "dnsmasq",
+            "controller": "service",
+            "is_abstract": false,
+            "base_class": "ApiMutableServiceControllerBase",
+            "filename": "ServiceController.php",
+            "model_filename": null
+        },
+        {
+            "actions": [
+                {
+                    "command": "add_boot",
+                    "parameters": "",
+                    "model_path": "dhcp_boot",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_domain",
+                    "parameters": "",
+                    "model_path": "domainoverrides",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_host",
+                    "parameters": "",
+                    "model_path": "hosts",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_option",
+                    "parameters": "",
+                    "model_path": "dhcp_options",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_range",
+                    "parameters": "",
+                    "model_path": "dhcp_ranges",
+                    "method": "POST"
+                },
+                {
+                    "command": "add_tag",
+                    "parameters": "",
+                    "model_path": "dhcp_tags",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_boot",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_boot",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_domain",
+                    "parameters": "$uuid",
+                    "model_path": "domainoverrides",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_host",
+                    "parameters": "$uuid",
+                    "model_path": "hosts",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_option",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_options",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_range",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_ranges",
+                    "method": "POST"
+                },
+                {
+                    "command": "del_tag",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_tags",
+                    "method": "POST"
+                },
+                {
+                    "command": "download_hosts",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_boot",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_domain",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_host",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_option",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_range",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_tag",
+                    "parameters": "$uuid=null",
+                    "method": "GET"
+                },
+                {
+                    "command": "get_tag_list",
+                    "parameters": "",
+                    "method": "GET"
+                },
+                {
+                    "command": "search_boot",
+                    "parameters": "",
+                    "model_path": "dhcp_boot",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_domain",
+                    "parameters": "",
+                    "model_path": "domainoverrides",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_host",
+                    "parameters": "",
+                    "model_path": "hosts",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_option",
+                    "parameters": "",
+                    "model_path": "dhcp_options",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_range",
+                    "parameters": "",
+                    "model_path": "dhcp_ranges",
+                    "method": "GET,POST"
+                },
+                {
+                    "command": "search_tag",
+                    "parameters": "",
+                    "model_path": "dhcp_tags",
+                    "method": "GET,POST"
+                },
+                {
+                    "method": "POST",
+                    "command": "set",
+                    "parameters": ""
+                },
+                {
+                    "command": "set_boot",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_boot",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_domain",
+                    "parameters": "$uuid",
+                    "model_path": "domainoverrides",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_host",
+                    "parameters": "$uuid",
+                    "model_path": "hosts",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_option",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_options",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_range",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_ranges",
+                    "method": "POST"
+                },
+                {
+                    "command": "set_tag",
+                    "parameters": "$uuid",
+                    "model_path": "dhcp_tags",
+                    "method": "POST"
+                },
+                {
+                    "command": "upload_hosts",
+                    "parameters": "",
+                    "method": "POST"
+                }
+            ],
+            "type": "Resources",
+            "module": "dnsmasq",
+            "controller": "settings",
+            "is_abstract": false,
+            "base_class": "ApiMutableModelControllerBase",
+            "filename": "SettingsController.php",
+            "model_filename": "/gitroot/upstream/opnsense/core/src/opnsense/mvc/app/models/OPNsense/Dnsmasq/Dnsmasq.xml"
+        }
+    ]
+]
