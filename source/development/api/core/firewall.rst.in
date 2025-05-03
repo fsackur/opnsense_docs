@@ -16,7 +16,7 @@ as a reference and testbed. There's no relation to any of the rules being manage
 
 
 {% for controller in controllers %}
-.. csv-table:: {{controller.type}} ({{controller.filename}}) {% if not controller.is_abstract %} -- extends : {{controller.base_class}} {% endif %}
+.. csv-table:: {{controller.type}} ({{controller.filename}}) {% if not controller.is_abstract %} -- extends : {{controller.base_class.split("\\")[-1]}} {% endif %}
    :header: "Method", "Module", "Controller", "Command", "Parameters"
    :widths: 4, 15, 15, 30, 40
 {%     for endpoint in controller.endpoints %}
