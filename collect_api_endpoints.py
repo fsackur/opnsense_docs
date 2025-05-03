@@ -27,7 +27,7 @@
 import os
 import argparse
 from jinja2 import Template
-from lib import ApiParser
+from lib import ApiParser, ApiController
 
 EXCLUDE_CONTROLLERS = ['Core/Api/FirmwareController.php']
 
@@ -40,7 +40,7 @@ def source_url(repo, src_filename):
         return "https://github.com/opnsense/core/blob/master/%s" % "/".join(parts[parts.index('src'):])
 
 
-def collect_api_modules(source: str, debug: bool = False) -> dict[str, list[dict]]:
+def collect_api_modules(source: str, debug: bool = False) -> dict[str, list[ApiController]]:
     # collect all endpoints
     all_modules = dict()
     for root, dirs, files in os.walk(source):
@@ -61,7 +61,7 @@ def collect_api_modules(source: str, debug: bool = False) -> dict[str, list[dict
     return all_modules
 
 
-def render(all_modules: dict[str, list[dict]], repo: str):
+def render(all_modules: dict[str, list[ApiController]], repo: str):
     # writeout .rst files
     for module_name in all_modules:
         target_filename = "%s/source/development/api/%s/%s.rst" % (
