@@ -16,7 +16,12 @@ from collections import defaultdict
 from typing import Any, Dict, List, Literal, Self, TypeAlias, TypedDict, Tuple
 from pydantic import BaseModel
 
-from parse_xml_models import get_openapi_schema_path, _DEFAULT_SOURCE_FOLDER
+# from parse_xml_models import get_openapi_schema_path, _DEFAULT_SOURCE_FOLDER
+_DEFAULT_SOURCE_FOLDER = "/usr/local/opnsense/mvc/app"
+def get_openapi_schema_path(vendor: str, module: str, name: str) -> str:
+    """Component path in the OpenApi schema; API ops will $ref to it."""
+    return f"{vendor}.{module}.{name}".lower()
+###
 
 
 _DEFAULT_OUTPUT_FILE = "endpoints.json"
