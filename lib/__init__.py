@@ -1,7 +1,7 @@
 import os
 import re
 from typing import List, Literal, NotRequired, TypedDict
-from lib.phply.phpast import Class, MethodCall, Constant, UnaryOp
+from lib.phply.phpast import Class, Namespace, UseDeclarations, MethodCall, Constant, UnaryOp
 from lib.phply.phplex import lexer
 from lib.phply.phpparse import make_parser
 
@@ -27,7 +27,7 @@ class ApiController(TypedDict):
 
 
 DEFAULT_BASE_METHODS = {
-    "ApiMutableModelControllerBase": [{
+    "OPNsense\\Base\\ApiMutableModelControllerBase": [{
         "command": "set",
         "parameters": "",
         "method": "POST"
@@ -36,7 +36,7 @@ DEFAULT_BASE_METHODS = {
         "parameters": "",
         "method": "GET"
     }],
-    "ApiMutableServiceControllerBase": [{
+    "OPNsense\\Base\\ApiMutableServiceControllerBase": [{
         "command": "status",
         "parameters": "",
         "method": "GET"
@@ -70,9 +70,11 @@ class ApiParser:
 
         self.model_filename = None
         self.is_abstract = False
+        self.class_name = None
         self.base_class = None
         self.api_commands = {}
         self._data = open(filename).read()
+        self._use_declarations = {}
 
     def _parse_class_variables(self, node):
         if node.nodes[-1].name == '$internalModelClass':
@@ -150,10 +152,19 @@ class ApiParser:
         self.parser = make_parser()
         self.parser.errorfunc = self._p_error
 
+        namespace = None
         for root in self.parser.parse(self._data, lexer=lexer.clone(), tracking=True):
-            if type(root) is Class:
+            if type(root) is Namespace:
+                namespace = root.name
+            elif type(root) is UseDeclarations:
+                for dec in root.nodes:
+                    used_name = dec.alias or dec.name.split("\\")[-1]
+                    self._use_declarations[used_name] = dec.name
+            elif type(root) is Class:
                 self.is_abstract = root.type == 'abstract'
-                self.base_class = root.extends
+                self.base_class = self._use_declarations.get(root.extends) or root.extends
+                self.class_name = f"{namespace}\\{root.name}" if namespace else root.name
+
                 for node in root.nodes:
                     tmp = "".join("_" + c.lower() if c.isupper() else c for c in type(node).__name__)
                     node_method =  '_parse%s' % tmp
